@@ -7,14 +7,14 @@ import Nav from "react-bootstrap/Nav";
 const MyNav = () => {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" className="bg-dark">
-        <Container>
+      <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+        <Container fluid>
           <Navbar.Brand href="#home" className="text-white ">
             EpiBooks
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           <Navbar.Collapse id="responsive-navbar-nav">
-            <Nav className="me-auto text-white">
+            <Nav className="ms-auto text-white">
               <Nav.Link href="#features" className="text-white">
                 Home
               </Nav.Link>
@@ -28,7 +28,7 @@ const MyNav = () => {
             <Nav></Nav>
           </Navbar.Collapse>
         </Container>
-      </Navbar>{" "}
+      </Navbar>
     </>
   );
 };

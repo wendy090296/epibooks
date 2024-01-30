@@ -10,11 +10,14 @@ function App() {
     <>
       <div className="App">
         <header className="">
-          <MyNav></MyNav>
+          <MyNav />
         </header>
-        <main></main>
+        <main>
+          <Welcome />
+          <AllTheBooks />
+        </main>
         <footer>
-          <MyFooter></MyFooter>
+          <MyFooter />
         </footer>
       </div>
     </>
