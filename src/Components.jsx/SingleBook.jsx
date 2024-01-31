@@ -1,16 +1,36 @@
 import Card from "react-bootstrap/Card";
 import Button from "react-bootstrap/Button";
-import "./books/scifi.json";
+import { Component } from "react";
 
-const SingleBook = ({ book }) => {
-  return (
-    <Card>
-      <Card.Img variant="top" src={book.img} />
-      <Card.Body>
-        <Card.Title>{book.title}</Card.Title>
-        <Button variant="dark">Buy!</Button>
-      </Card.Body>
-    </Card>
-  );
-};
+class SingleBook extends Component {
+  state = {
+    selected: false,
+  };
+
+  render() {
+    return (
+      <>
+        <Card className={this.state.selected ? "selectedCard" : ""}>
+          <Card.Img variant="top" src={this.props.oneBook.img} />
+          <Card.Body>
+            <Card.Title>{this.props.oneBook.title}</Card.Title>
+            <Card.Text>{this.props.oneBook.price} </Card.Text>
+            <Card.Text>{this.props.oneBook.category} </Card.Text>
+            <Button
+              variant="dark"
+              onClick={() => {
+                this.setState({
+                  selected: this.state.selected ? false : true,
+                });
+              }}
+            >
+              Get it now!
+            </Button>
+          </Card.Body>
+        </Card>
+      </>
+    );
+  }
+}
+
 export default SingleBook;
