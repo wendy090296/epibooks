@@ -37,6 +37,6 @@
   }
 }
 
-.selectedCard {
+.col-12 > .selectedCard {
   border: 2px solid red;
 }
