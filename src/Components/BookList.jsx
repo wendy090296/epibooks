@@ -6,7 +6,7 @@ class BookList extends Component {
   //questo componente riceve un json dalle props
 
   state = {
-    searchValue: "",
+    searchValue: "", // stato INIZIALE
   };
 
   render() {
@@ -21,7 +21,11 @@ class BookList extends Component {
           }}
         />
         {this.props.jsonOfBooks
-          .filter((book) => book.title.includes(this.state.searchValue))
+          .filter((book) =>
+            book.title
+              .toLowerCase()
+              .includes(this.state.searchValue.toLowerCase())
+          )
           .map((book) => (
             <Col xs={12} md={6} lg={4} xl={3} key={book.asin}>
               <SingleBook oneBook={book} />

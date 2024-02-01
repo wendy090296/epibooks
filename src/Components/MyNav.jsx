@@ -7,9 +7,15 @@ import Nav from "react-bootstrap/Nav";
 const MyNav = () => {
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" data-bs-theme="dark">
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="dark"
+        data-bs-theme="dark"
+        className="my-navbar"
+      >
         <Container fluid>
-          <Navbar.Brand href="#home" className="text-white ">
+          <Navbar.Brand href="#home" className="text-white">
             EpiBooks
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
