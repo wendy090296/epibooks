@@ -7,6 +7,7 @@ class SingleBook extends Component {
   state = {
     selected: false,
   };
+
   render() {
     return (
       <>
@@ -24,14 +25,14 @@ class SingleBook extends Component {
             <Card.Title>{this.props.oneBook.title}</Card.Title>
             <Card.Text>{this.props.oneBook.price} </Card.Text>
             <Card.Text>{this.props.oneBook.category} </Card.Text>
-            <Button onClick=()=>{
-              {this.state.selected ?  <CommentArea comments={book.comments}  : "no-feedbacks"}
-            }>
-            </Button>
+            <Button variant="dark">Get it now!</Button>
           </Card.Body>
         </Card>
+
+        {this.state.selected && <CommentArea asin={this.props.oneBook.asin} />}
       </>
-    )}}
+    );
+  }
+}
 
 export default SingleBook;
-
