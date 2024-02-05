@@ -1,34 +1,24 @@
+import "bootstrap/dist/css/bootstrap.min.css";
 import "./App.css";
 import MyNav from "./Components/MyNav";
-import "bootstrap/dist/css/bootstrap.min.css";
 import MyFooter from "./Components/MyFooter";
 import Welcome from "./Components/Welcome";
+// import AllTheBooks from './components/AllTheBooks'
+import { Container } from "react-bootstrap";
 import BookList from "./Components/BookList";
-import books from "./Components/books/history.json";
-import { Container, Row } from "react-bootstrap";
 
-// books é il mio array di oggetti !
-// oneBook é UN OGGETTO dell'array books !
+import fantasy from "./Components/books/fantasy.json";
+
 function App() {
   return (
     <>
-      <div className="App">
-        <header className="">
-          <MyNav />
-        </header>
-        <main>
-          <Container>
-            <Row className="justify-content-center">
-              <Welcome />
-
-              <BookList jsonOfBooks={books} />
-            </Row>
-          </Container>
-        </main>
-        <footer>
-          <MyFooter />
-        </footer>
-      </div>
+      <MyNav />
+      <Container>
+        <Welcome />
+        {/* <AllTheBooks /> */}
+        <BookList books={fantasy} />
+      </Container>
+      <MyFooter />
     </>
   );
 }

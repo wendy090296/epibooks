@@ -1,35 +1,33 @@
-import Card from "react-bootstrap/Card";
-import Button from "react-bootstrap/Button";
 import { Component } from "react";
-import CommentArea from "./CommentArea";
+import { Card } from "react-bootstrap";
+// import CommentArea from './CommentArea'
 
 class SingleBook extends Component {
-  state = {
-    selected: false,
-  };
+  // state = {
+  //   selected: false,
+  // }
 
   render() {
     return (
       <>
-        <Card className={this.state.selected ? "selectedCard" : ""}>
-          <Card.Img
-            variant="top"
-            src={this.props.oneBook.img}
-            onClick={() => {
-              this.setState({
-                selected: this.state.selected ? false : true,
-              });
-            }}
-          />
+        <Card
+          // onClick={() => this.setState({ selected: !this.state.selected })}
+          onClick={() => this.props.changeSelectedBook(this.props.book.asin)}
+          style={{
+            border:
+              this.props.selectedBook === this.props.book.asin
+                ? "3px solid red"
+                : "none",
+          }}
+        >
+          <Card.Img variant="top" src={this.props.book.img} />
           <Card.Body>
-            <Card.Title>{this.props.oneBook.title}</Card.Title>
-            <Card.Text>{this.props.oneBook.price} </Card.Text>
-            <Card.Text>{this.props.oneBook.category} </Card.Text>
-            <Button variant="dark">Get it now!</Button>
+            <Card.Title style={{ color: "black" }}>
+              {this.props.book.title}
+            </Card.Title>
           </Card.Body>
         </Card>
-
-        {this.state.selected && <CommentArea asin={this.props.oneBook.asin} />}
+        {/* {this.state.selected && <CommentArea asin={this.props.book.asin} />} */}
       </>
     );
   }
