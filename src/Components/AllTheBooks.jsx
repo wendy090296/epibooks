@@ -12,7 +12,7 @@ const AllTheBooks = () => {
         {Books.map((book) => {
           return (
             <Col>
-              <Card className="h-100" key={book.asin}>
+              <Card className="h-100 w-100" key={book.asin}>
                 <Card.Img variant="top" src={book.img} />
                 <Card.Body>
                   <Card.Title>{book.title}</Card.Title>
